@@ -22,7 +22,7 @@ const DashboardHome = () => {
       setRole(userRole);
       
       try {
-        const response = await axios.get('http://localhost:3001/api/dashboard-data', {
+        const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/dashboard-data', {
           params: { companyId }
         });
         setDashboardData(response.data);

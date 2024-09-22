@@ -20,7 +20,7 @@ const AddTaskModal = ({ show, handleClose, handleAddTask, fetchTasks }) => {
 
     const fetchProjects = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/projects', {
+        const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/projects', {
           params: { companyId: storedCompanyId }
         });
         setProjects(response.data);
@@ -31,7 +31,7 @@ const AddTaskModal = ({ show, handleClose, handleAddTask, fetchTasks }) => {
 
     const fetchEmployees = async () => {
       try {
-        const response = await axios.get('http://localhost:3001/api/employees', {
+        const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/employees', {
           params: { companyId: storedCompanyId }
         });
         setEmployees(response.data);
@@ -70,7 +70,7 @@ const AddTaskModal = ({ show, handleClose, handleAddTask, fetchTasks }) => {
     };
 
     try {
-      await axios.post('http://localhost:3001/api/addTask', taskData); // Adjust the API endpoint as necessary
+      await axios.post('https://taskmanagementsystem-64t8.onrender.com/api/addTask', taskData); // Adjust the API endpoint as necessary
       handleAddTask(taskData);
       setSubmitting(false);
       resetForm();

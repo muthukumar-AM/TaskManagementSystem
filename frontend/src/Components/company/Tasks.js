@@ -20,7 +20,7 @@ const Tasks = () => {
         const empId = localStorage.getItem('empId');
         const role = localStorage.getItem('role');
         try {
-            const response = await axios.get('http://localhost:3001/api/tasks', {
+            const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/tasks', {
                 params: {
                     companyId: storedCompanyId,
                     role: role,
@@ -108,7 +108,7 @@ const Tasks = () => {
 
     const handleDeleteConfirm = async () => {
         try {
-            await axios.delete(`http://localhost:3001/api/removeTask/${taskToDelete._id}`);
+            await axios.delete(`https://taskmanagementsystem-64t8.onrender.com/api/removeTask/${taskToDelete._id}`);
             setTasks(tasks.filter(task => task._id !== taskToDelete._id));
             setFilteredTasks(filteredTasks.filter(task => task._id !== taskToDelete._id));
             setTaskToDelete(null);

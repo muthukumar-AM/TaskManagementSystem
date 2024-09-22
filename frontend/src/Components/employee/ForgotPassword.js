@@ -10,7 +10,7 @@ const ForgotPassword=()=>{
 
         try {
             
-            const response = await axios.post('http://localhost:3001/api/forgot-password', { email });
+            const response = await axios.post('https://taskmanagementsystem-64t8.onrender.com/api/forgot-password', { email });
             setMessage(response.data.message);
         } catch (error) {
             setMessage('Error sending password reset email');

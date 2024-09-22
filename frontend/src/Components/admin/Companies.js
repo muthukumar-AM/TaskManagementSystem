@@ -15,7 +15,7 @@ const Companies = () => {
     const fetchCompanies = async () => {
         
         try {
-            const response = await axios.get('http://localhost:3001/api/companies');
+            const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/companies');
             setCompanies(response.data);
         } catch (error) {
             console.error('Error fetching companies:', error);

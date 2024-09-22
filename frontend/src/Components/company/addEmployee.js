@@ -60,7 +60,7 @@ const AddModal = () => {
             }}
             validationSchema={validationSchema}
             onSubmit={(values, { setSubmitting }) => {
-              axios.post('http://localhost:3001/api/addEmployee', values)
+              axios.post('https://taskmanagementsystem-64t8.onrender.com/api/addEmployee', values)
                 .then(response => {
                   console.log(response.data);
                   setSubmitting(false);

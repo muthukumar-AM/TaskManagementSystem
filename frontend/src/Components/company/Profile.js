@@ -20,7 +20,7 @@ const CompanyProfile = () => {
     const companyId = localStorage.getItem('companyId');
     setLogoPath(localStorage.getItem('logo'));
     
-    axios.get(`http://localhost:3001/api/company/${companyId}`)
+    axios.get(`https://taskmanagementsystem-64t8.onrender.com/api/company/${companyId}`)
       .then(response => {
         setUserData(response.data);
         const updatedLogoPath = response.data.companyLogo;
@@ -63,7 +63,7 @@ const CompanyProfile = () => {
     }
 
     try {
-      await axios.put(`http://localhost:3001/api/company/${companyId}`, formData, {
+      await axios.put(`https://taskmanagementsystem-64t8.onrender.com/api/company/${companyId}`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data'
         }
@@ -84,7 +84,7 @@ const CompanyProfile = () => {
         <div className="card-body">
           <h5 className="card-title text-center mb-4">Company Profile</h5>
           <div className="d-flex justify-content-center mb-4">
-            <img src={logoPath ? `http://localhost:3001/${logoPath}` : 'default-placeholder.png'} alt="Company Logo" style={{ width: '100px' }} />
+            <img src={logoPath ? `https://taskmanagementsystem-64t8.onrender.com/${logoPath}` : 'default-placeholder.png'} alt="Company Logo" style={{ width: '100px' }} />
           </div>
           <form onSubmit={handleSubmit} encType="multipart/form-data">
             <div className="row mb-3">

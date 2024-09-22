@@ -10,7 +10,7 @@ const CompanyForgotPassword=()=>{
 
         try {
             
-            const response = await axios.post('http://localhost:3001/api/company-forgot-password', { email });
+            const response = await axios.post('https://taskmanagementsystem-64t8.onrender.com/api/company-forgot-password', { email });
             setEmail('');
             setMessage(response.data.message);
         } catch (error) {

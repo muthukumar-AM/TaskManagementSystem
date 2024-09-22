@@ -29,7 +29,7 @@ const EditEmpModal = ({ employee, onClose, onUpdate }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:3001/api/employees/${employee._id}`, formData);
+            const response = await axios.put(`https://taskmanagementsystem-64t8.onrender.com/api/employees/${employee._id}`, formData);
             onUpdate(response.data);
             onClose();
         } catch (error) {

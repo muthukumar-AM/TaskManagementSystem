@@ -20,7 +20,7 @@ const EditTaskModal = ({ task, onClose, onUpdate }) => {
     const handleSubmit = async (e) => {
         e.preventDefault();
         try {
-            const response = await axios.put(`http://localhost:3001/api/tasks/${task._id}`, formData);
+            const response = await axios.put(`https://taskmanagementsystem-64t8.onrender.com/api/tasks/${task._id}`, formData);
             onUpdate(response.data);
             onClose();
         } catch (error) {

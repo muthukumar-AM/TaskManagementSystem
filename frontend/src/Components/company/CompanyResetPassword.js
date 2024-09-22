@@ -24,7 +24,7 @@ const CompanyResetPassword = () => {
     setMessage('');
     try {
       console.log(token);
-      const response = await axios.post(`http://localhost:3001/api/company-reset-password?token=${token}`, { password });
+      const response = await axios.post(`https://taskmanagementsystem-64t8.onrender.com/api/company-reset-password?token=${token}`, { password });
       setMessage(response.data.message);
       
       // Reset the input field

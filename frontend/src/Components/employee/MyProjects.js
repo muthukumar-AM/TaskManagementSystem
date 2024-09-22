@@ -20,7 +20,7 @@ const MyProject = () => {
         setUserRole(role);
 
         try {
-            const response = await axios.get('http://localhost:3001/api/myProjects', {
+            const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/myProjects', {
                 params: {
                     empId: storedEmpId,
                 },
@@ -74,7 +74,7 @@ const MyProject = () => {
             const newStatus = selectedStatuses[currentEmployee._id] || currentEmployee.status;
 
             try {
-                await axios.put(`http://localhost:3001/api/updateProjectStatus/${currentEmployee._id}`, {
+                await axios.put(`https://taskmanagementsystem-64t8.onrender.com/api/updateProjectStatus/${currentEmployee._id}`, {
                     status: newStatus,
                 });
                 setEmployees((prevEmployees) =>

@@ -18,7 +18,7 @@ const EditProject = ({ employee, onClose, onUpdate }) => {
     useEffect(() => {
         // Fetch team members from the backend
         const storedCompanyId = localStorage.getItem('companyId');
-        axios.get('http://localhost:3001/api/employees',{
+        axios.get('https://taskmanagementsystem-64t8.onrender.com/api/employees',{
             params: { companyId: storedCompanyId } // Pass companyId if required
           })
             .then(response => {
@@ -66,7 +66,7 @@ const EditProject = ({ employee, onClose, onUpdate }) => {
                 team: formData.team.map(option => option.value)
             };
 
-            const response = await axios.put(`http://localhost:3001/api/projects/${employee._id}`, updatedFormData);
+            const response = await axios.put(`https://taskmanagementsystem-64t8.onrender.com/api/projects/${employee._id}`, updatedFormData);
             onUpdate(response.data);
             onClose();
         } catch (error) {

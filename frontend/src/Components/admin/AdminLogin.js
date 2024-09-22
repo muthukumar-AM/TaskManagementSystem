@@ -17,7 +17,7 @@ const AdminLogin = () => {
   };
 
   const onSubmit = (values, { setSubmitting, setErrors }) => {
-    axios.post('http://localhost:3001/api/adminLogin', values)
+    axios.post('https://taskmanagementsystem-64t8.onrender.com/api/adminLogin', values)
       .then(response => {
         console.log(response.data.message);
         const decoded = jwtDecode(response.data.token); // Use jwtDecode instead of jwt_decode

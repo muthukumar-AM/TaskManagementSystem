@@ -27,7 +27,7 @@ const ProjectModal = ({ fetchProjects }) => {
 
   useEffect(() => {
     // Fetch team members from the backend
-    axios.get('http://localhost:3001/api/employees',{
+    axios.get('https://taskmanagementsystem-64t8.onrender.com/api/employees',{
       params: { companyId: storedCompanyId } // Pass companyId if required
     })
       .then(response => {
@@ -82,7 +82,7 @@ const ProjectModal = ({ fetchProjects }) => {
               // Filter out empty resources
               values.resources = resources.filter(res => res.trim() !== '');
 
-              axios.post('http://localhost:3001/api/addProject', values)
+              axios.post('https://taskmanagementsystem-64t8.onrender.com/api/addProject', values)
                 .then(response => {
                   console.log(response.data);
                   setSubmitting(false);

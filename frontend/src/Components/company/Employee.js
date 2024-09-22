@@ -17,7 +17,7 @@ const Employee = () => {
         const storedCompanyId = localStorage.getItem('companyId');
         const storedRole = localStorage.getItem('role');
         try {
-            const response = await axios.get('http://localhost:3001/api/employees', {
+            const response = await axios.get('https://taskmanagementsystem-64t8.onrender.com/api/employees', {
                 params: {
                     companyId: storedCompanyId,
                     role: storedRole
@@ -47,7 +47,7 @@ const Employee = () => {
 
     const handleDeleteConfirm = async () => {
         try {
-            await axios.delete(`http://localhost:3001/api/removeEmp/${employeeToDelete._id}`);
+            await axios.delete(`https://taskmanagementsystem-64t8.onrender.com/api/removeEmp/${employeeToDelete._id}`);
             const updatedEmployees = employees.filter(emp => emp._id !== employeeToDelete._id);
             setEmployees(updatedEmployees);
             setEmployeeToDelete(null);
