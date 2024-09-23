@@ -20,6 +20,15 @@ app.use(cors({
 app.use(bodyParser.json());
 app.use(sessionMiddleware);
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
+
+// Serve static files from the frontend's build folder
+app.use(express.static(path.join(__dirname, '../frontend/build')));
+
+// Serve index.html for all routes not handled by the API
+app.get('/*', function (req, res) {
+  res.sendFile(path.join(__dirname, '../frontend/build', 'index.html'));
+});
+
 // Define Routes
 app.use('/api', require('./routes/companyRoutes'));
 
