@@ -1,0 +1,4 @@
+routes:
+  - type: rewrite
+    source: /.* # Match all frontend routes
+    destination: /index.html # Serve index.html for all routes
