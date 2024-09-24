@@ -14,7 +14,7 @@ connectDB();
 
 // Init Middleware
 app.use(cors({
-  origin: process.env.BASE_URL || 'http://localhost:3000', // Replace with your client URL
+  origin: process.env.BASE_URL || 'https://taskmanagementsystem-1-x4yq.onrender.com', // Replace with your client URL
   credentials: true // Allow cookies to be sent
 }));
 app.use(bodyParser.json());
