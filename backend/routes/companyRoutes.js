@@ -7,7 +7,7 @@ const admin=require('../controller/admin/adminController')
 const router = express.Router();
 
 router.post('/companySignup', company.registerCompany);
-router.get('/verify-email',verifymail.verifyEmail);
+router.get('/verify-email/:token',verifymail.verifyEmail);
 router.post('/reset-password',company.resetPassword);
 router.post('/companyLogin',company.loginCompany);
 router.post('/addEmployee',company.addEmployee);
