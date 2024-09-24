@@ -21,8 +21,8 @@ const VerifyEmail = () => {
         return;
       }
 
-      try {
-        const response = await axios.get(`https://taskmanagementsystem-64t8.onrender.com/api/verify-email?token=${token}`);
+      try {                               
+        const response = await axios.get(`https://taskmanagementsystem-64t8.onrender.com/api/verify-email/${token}`);
         
         if (response.data.success) {
           setSuccessMessage('Email verified successfully! Redirecting to login');
